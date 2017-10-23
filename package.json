@@ -1,0 +1,25 @@
+{
+  "name": "module-decompose-loader",
+  "version": "1.0.0",
+  "description": "rewrite module loading to minimize loaded code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "module",
+    "load",
+    "on",
+    "demand"
+  ],
+  "author": "bloody-ux",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "loader-utils": "^1.1.0",
+    "typescript": "^2.5.3"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  }
+}
