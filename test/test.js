@@ -52,6 +52,22 @@ describe('ES6 Module', function() {
       assert.equal(result, target);
     });
 
+    it('should return <import Button from \'antd/lib/button\';import \'antd/lib/button/style/css\';> when style: \'css\', components: \'lv1/lv2\' and camel2Dash: true', function() {
+      const source = 'import { Button } from \'antd\'';
+      const target = '\nimport Button from \'antd/lv1/lv2/button\';\nimport \'antd/lv1/lv2/button/style/css\';';
+      const result = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: 'css',
+            components: 'lv1/lv2',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(result, target);
+    });
+
     it('should return <import Button from \'antd/lib/button\';import \'antd/lib/button/style\';> when style: true, components: \'lib\' and camel2Dash: true', function() {
       const source = 'import { Button } from \'antd\'';
       const target = '\nimport Button from \'antd/lib/button\';\nimport \'antd/lib/button/style\';';
@@ -67,5 +83,58 @@ describe('ES6 Module', function() {
 
       assert.equal(result, target);
     });
+
+    it('should return <import Button from \'antd/lib/Button\';import \'antd/lib/Button/style\';> when style: true, components: \'lib\' and camel2Dash: false', function() {
+      const source = 'import { Button } from \'antd\'';
+      const target = '\nimport Button from \'antd/lib/Button\';\nimport \'antd/lib/Button/style\';';
+      const result = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: true,
+            components: 'lib',
+            camel2Dash: false,
+          }
+        }
+      });
+
+      assert.equal(result, target);
+    });
   });
+
+  describe('import { ListItem, PickerView } from \'antd-mobile\'', function() {
+    it('should return <import ListItem from \'antd-mobile/es/list-item\';import \'antd-mobile/es/list-item/style/css\';import PickerView from \'antd-mobile/es/picker-view\';import \'antd-mobile/es/picker-view/style/css\'> when style: \'css\', components: \'es\' and camel2Dash: true', function() {
+      const source = 'import { ListItem, PickerView } from \'antd-mobile\'';
+      const target = '\nimport ListItem from \'antd-mobile/es/list-item\';\nimport \'antd-mobile/es/list-item/style/css\';\nimport PickerView from \'antd-mobile/es/picker-view\';\nimport \'antd-mobile/es/picker-view/style/css\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'antd-mobile': {
+            style: 'css',
+            components: 'es',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+
+  describe('import Antd, { ListItem } from \'antd-mobile\'', function() {
+    it('should return <import ListItem from \'antd-mobile/es/list-item\';import \'antd-mobile/es/list-item/style/css\';import Antd from \'antd-mobile\';> when style: \'css\', components: \'es\' and camel2Dash: true', function() {
+      const source = 'import Antd, { ListItem } from \'antd-mobile\'';
+      const target = '\nimport ListItem from \'antd-mobile/es/list-item\';\nimport \'antd-mobile/es/list-item/style/css\';\nimport Antd from \'antd-mobile\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'antd-mobile': {
+            style: 'css',
+            components: 'es',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+
 });
