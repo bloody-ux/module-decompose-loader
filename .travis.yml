@@ -8,18 +8,12 @@ matrix:
   include:
     - os: linux
       node_js: "8"
-      env: JOB_PART=lint
+      env: JOB_PART=test
     - os: linux
       node_js: "7"
-      env: JOB_PART=lint
+      env: JOB_PART=test
     - os: linux
       node_js: "6"
-      env: JOB_PART=test
-    - os: linux
-      node_js: "4.3"
-      env: JOB_PART=test
-    - os: linux
-      node_js: "7"
       env: JOB_PART=test
     - os: linux
       node_js: "4.3"
