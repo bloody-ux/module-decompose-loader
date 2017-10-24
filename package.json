@@ -24,6 +24,7 @@
     "node": ">=4.2.0"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "mocha": "^4.0.1"
   }
 }
