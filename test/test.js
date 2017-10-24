@@ -151,3 +151,39 @@ describe('Given import Antd, { ListItem } from \'antd-mobile\'', function() {
     });
   });
 });
+
+describe('Given import { debounce } from \'lodash\'', function() {  
+  describe('When setting with nothing', function() {
+    it('Should return <import debounce from \'lodash/debounce\';>', function() {
+      const source = 'import { debounce } from \'lodash\'';
+      const target = '\nimport debounce from \'lodash/debounce\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'lodash': {
+            // nothing
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+});
+
+describe('Given import { debounce, zip } from \'lodash\'', function() {  
+  describe('When setting with nothing', function() {
+    it('Should return <import debounce from \'lodash/debounce\';import zip from \'lodash/zip\';>', function() {
+      const source = 'import { debounce, zip } from \'lodash\'';
+      const target = '\nimport debounce from \'lodash/debounce\';\nimport zip from \'lodash/zip\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'lodash': {
+            // nothing
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+});
