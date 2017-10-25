@@ -159,7 +159,25 @@ describe('Given import { debounce } from \'lodash\'', function() {
       const target = '\nimport debounce from \'lodash/debounce\';'
       const result = moduleDecompose(source, {
         modules: {
-          'lodash': {
+          lodash: {
+            // nothing
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+});
+
+describe('Given import { add } from \'lodash/fp\'', function() {  
+  describe('When setting with nothing', function() {
+    it('Should return <import add from \'lodash/fp/add\';>', function() {
+      const source = 'import { add } from \'lodash/fp\'';
+      const target = '\nimport add from \'lodash/fp/add\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'lodash/fp': {
             // nothing
           }
         }
@@ -171,6 +189,24 @@ describe('Given import { debounce } from \'lodash\'', function() {
 });
 
 describe('Given import { debounce, zip } from \'lodash\'', function() {  
+  describe('When setting with nothing', function() {
+    it('Should return <import debounce from \'lodash/debounce\';import zip from \'lodash/zip\';>', function() {
+      const source = 'import { debounce, zip } from \'lodash\'';
+      const target = '\nimport debounce from \'lodash/debounce\';\nimport zip from \'lodash/zip\';'
+      const result = moduleDecompose(source, {
+        modules: {
+          'lodash': {
+            // nothing
+          }
+        }
+      });
+
+      assert.equal(target, result);
+    });
+  });
+});
+
+describe('Given import { debounce } from \'lodash\';import { Button } from \'antd\'', function() {  
   describe('When setting with nothing', function() {
     it('Should return <import debounce from \'lodash/debounce\';import zip from \'lodash/zip\';>', function() {
       const source = 'import { debounce, zip } from \'lodash\'';
