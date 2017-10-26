@@ -129,7 +129,7 @@ antd-mobile.js  1.35 MB       0  [emitted]  [big]  antd-mobile
 |**[`modules[moduleName]`](#modulesmodulename)**|`{Object}`| `undefined` | Tell which module to enable decomposing  |
 |**[`modules[moduleName].components`](#modulesmodulenamecomponents)**|`{String} | undefined`| `undefined` | Configure the generated import from statement |
 |**[`modules[moduleName].style`](#modulesmodulenamestyle)** |`{String | Boolean}`|`false`| Configure whether and how to output css import statement |
-|**[`modulesmodulenamecamel2dash`](#modules[moduleName].camel2Dash)**|`{Boolean}`|`false`| Configure whether the path is camel case or dash |
+|**[`modules[moduleName].camel2Dash`](#modulesmodulenamecamel2dash)**|`{Boolean}`|`false`| Configure whether the path is camel case or dash |
 
 ### `modules`
 Contains node modules to decompose, if it's not set, warning will be shown and the loader will not take effect.

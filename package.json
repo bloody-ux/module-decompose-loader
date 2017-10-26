@@ -1,6 +1,6 @@
 {
   "name": "module-decompose-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "decomposing module importing to minimize bundle size in webpack",
   "main": "index.js",
   "files": [
