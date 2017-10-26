@@ -1,7 +1,7 @@
 {
   "name": "module-decompose-loader",
-  "version": "1.0.0",
-  "description": "rewrite module loading to minimize loaded code",
+  "version": "1.0.1",
+  "description": "decomposing module importing to minimize bundle size in webpack",
   "main": "index.js",
   "files": [
     "lib",
@@ -12,12 +12,13 @@
     "travis:test": "mocha"
   },
   "keywords": [
-    "module",
-    "load",
-    "on",
-    "demand"
+    "webpack",
+    "loader",
+    "reduce bundle size",
+    "import",
+    "decomposing"
   ],
-  "author": "bloody_ux",
+  "author": "bloody-ux",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
