@@ -156,6 +156,7 @@ If the option is `true`, `import { Button } from 'antd'` will generate `import B
 If not, the result will be `import Button from 'antd/Button'`
 
 <h2 align="center">Nodejs Usage</h2>
+
 ``` js
 import moduleDecomopse from 'module-decompose-loader/lib/module-decompose';
 
