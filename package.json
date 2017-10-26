@@ -1,6 +1,6 @@
 {
   "name": "module-decompose-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "decomposing module importing to minimize bundle size in webpack",
   "main": "index.js",
   "files": [
@@ -16,7 +16,10 @@
     "loader",
     "reduce bundle size",
     "import",
-    "decomposing"
+    "decomposing",
+    "antd",
+    "antd-mobile",
+    "lodash"
   ],
   "author": "bloody-ux",
   "license": "MIT",
