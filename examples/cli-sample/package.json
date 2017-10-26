@@ -1,0 +1,19 @@
+{
+  "name": "cli-sample",
+  "version": "1.0.0",
+  "description": "cli sample for module-decompose-loader",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "module",
+    "import",
+    "nodejs"
+  ],
+  "author": "bloody-ux",
+  "license": "MIT",
+  "dependencies": {
+    "module-decompose-loader": "^1.0.0"
+  }
+}

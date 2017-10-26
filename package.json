@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "rewrite module loading to minimize loaded code",
   "main": "index.js",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "scripts": {
     "test": "mocha",
     "travis:test": "mocha"
@@ -13,7 +17,7 @@
     "on",
     "demand"
   ],
-  "author": "bloody-ux",
+  "author": "bloody_ux",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
@@ -26,5 +30,9 @@
   "devDependencies": {
     "assert": "^1.4.1",
     "mocha": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bloody-ux/module-decompose-loader.git"
   }
 }

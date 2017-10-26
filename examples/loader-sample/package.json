@@ -1,0 +1,33 @@
+{
+  "name": "loader-sample",
+  "version": "1.0.0",
+  "description": "example to show the usages",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "keywords": [
+    "webpack",
+    "module",
+    "import"
+  ],
+  "author": "bloody-ux",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "ant-mobile": "^0.0.0",
+    "antd": "^2.13.7",
+    "antd-mobile": "^2.0.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "lodash": "^4.17.4",
+    "module-decompose-loader": "^1.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "style-loader": "^0.19.0"
+  }
+}
