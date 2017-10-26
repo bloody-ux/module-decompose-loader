@@ -148,7 +148,7 @@ The from part generation rule is:
 
 This option tells whether to generate style import statement and how to.
 When `style` is `falsy`, no style import will be generated, usefull for libraries without UI.
-When `style` is `String`, the value is used to generate the from path.  Given `import { Button } from 'antd'`, when `style` is `css/default`, generated style statement will be `import 'antd/button/style/**css/default**'`.
+When `style` is `String`, the value is used to generate the from path.  Given `import { Button } from 'antd'`, when `style` is `css/default`, generated style statement will be `import 'antd/button/style/css/default'`.
 
 ### `modules[moduleName].camel2Dash`
 
