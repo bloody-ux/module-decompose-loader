@@ -24,16 +24,16 @@
   "author": "bloody-ux",
   "license": "MIT",
   "dependencies": {
-    "colors": "^1.1.2",
-    "loader-utils": "^1.1.0",
-    "typescript": "^2.5.3"
+    "colors": "^1.4.0",
+    "loader-utils": "^1.2.3",
+    "typescript": "^3.6.4"
   },
   "engines": {
     "node": ">=4.2.0"
   },
   "devDependencies": {
-    "assert": "^1.4.1",
-    "mocha": "^4.0.1"
+    "assert": "^2.0.0",
+    "mocha": "^6.2.2"
   },
   "repository": {
     "type": "git",
