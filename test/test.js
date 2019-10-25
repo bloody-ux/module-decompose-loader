@@ -112,6 +112,98 @@ describe('Given <import { Button } from \'antd\'>', function() {
   });
 });
 
+describe('Given <import { Button as ButtonX } from \'antd\'>', function() {
+  describe('When setting with style: false, components: \'lib\' and camel2Dash: true', function() {
+    it('Should return <import ButtonX from \'antd/lib/button\';>', function() {
+      const source = 'import { Button as ButtonX } from \'antd\'';
+      const target = '\nimport ButtonX from \'antd/lib/button\';';
+      const actual = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: false,
+            components: 'lib',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(actual, target);
+    });
+  });
+
+  describe('When setting with style: \'css\', components: \'lib\' and camel2Dash: true', function() {
+    it('Should return <import ButtonX from \'antd/lib/button\';import \'antd/lib/button/style/css\';>', function() {
+      const source = 'import { Button as ButtonX } from \'antd\'';
+      const target = '\nimport ButtonX from \'antd/lib/button\';\nimport \'antd/lib/button/style/css\';';
+      const actual = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: 'css',
+            components: 'lib',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(actual, target);
+    });
+  });
+
+  describe('When setting with style: \'css\', components: \'lv1/lv2\' and camel2Dash: true', function() {
+    it('Should return <import ButtonX from \'antd/lib/button\';import \'antd/lib/button/style/css\';>', function() {
+      const source = 'import { Button as ButtonX } from \'antd\'';
+      const target = '\nimport ButtonX from \'antd/lv1/lv2/button\';\nimport \'antd/lv1/lv2/button/style/css\';';
+      const actual = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: 'css',
+            components: 'lv1/lv2',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(actual, target);
+    });
+  });
+
+  describe('When setting with style: true, components: \'lib\' and camel2Dash: true', function() {
+    it('Should return <import ButtonX from \'antd/lib/button\';import \'antd/lib/button/style\';>', function() {
+      const source = 'import { Button as ButtonX } from \'antd\'';
+      const target = '\nimport ButtonX from \'antd/lib/button\';\nimport \'antd/lib/button/style\';';
+      const actual = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: true,
+            components: 'lib',
+            camel2Dash: true,
+          }
+        }
+      });
+
+      assert.equal(actual, target);
+    });
+  });
+
+  describe('When setting with style: true, components: \'lib\' and camel2Dash: false', function() {
+    it('Should return <import ButtonX from \'antd/lib/Button\';import \'antd/lib/Button/style\';>', function() {
+      const source = 'import { Button as ButtonX } from \'antd\'';
+      const target = '\nimport ButtonX from \'antd/lib/Button\';\nimport \'antd/lib/Button/style\';';
+      const actual = moduleDecompose(source, {
+        modules: {
+          antd: {
+            style: true,
+            components: 'lib',
+            camel2Dash: false,
+          }
+        }
+      });
+
+      assert.equal(actual, target);
+    });
+  });
+});
+
 describe('Given <import { ListItem, PickerView } from \'antd-mobile\'>', function() {
   describe('When setting with style: \'css\', components: \'es\' and camel2Dash: true', function() {
     it('Should return <import ListItem from \'antd-mobile/es/list-item\';import \'antd-mobile/es/list-item/style/css\';import PickerView from \'antd-mobile/es/picker-view\';import \'antd-mobile/es/picker-view/style/css\'>', function() {
